@@ -1,11 +1,12 @@
-import { MongoClient, ReadPreference, Db, MongoClientOptions } from "mongodb";
-import { Context } from "hono";
+import { MongoClient, ReadPreference, Db } from "mongodb";
+import type { MongoClientOptions } from "mongodb";
+import type { Context } from "hono";
 
 // 全局存储 MongoClient 和 Db 实例
 let client: MongoClient | null = null;
 let db: Db | null = null;
 
-const uri = Deno.env.get("MONGODB_URI") || "";
+const uri = process.env.MONGODB_URI || "";
 
 if (!uri) {
   throw new Error("MONGODB_URI is not defined in environment variables");
