@@ -2,7 +2,7 @@ app = "my-app1"
 primary_region = "sea"
 
 [build]
-  builder = "paketo/buildpacks:base"
+  builder = "paketobuildpacks/builder:base"
 
 [http_service]
   internal_port = 3000
